@@ -2,7 +2,7 @@
 
 The Data Science Bowl 2018 was a Kaggle competition that challenged participants to identify cellular nuceli in biomedical microscopic images.The images were of multiple sizes and resolutions, in various lighting conditions, and of various cell types. The goal was to predict the regions of the image where nuclei were located i.e. this is a problem of image segmentation each pixel needs to be labelled as nucleus, or background.
 
-Most approaches to the problem used U-net neural networks or mask-RCNN, but given training set small, it is not clear that a deep learning model with thousands of parameters is the most efficient or accurate way to approach the problem. Here we approach this as a clustering problem, using Density-Based Spatial Clustering of Applications with Noise.
+Most approaches to the problem used U-net neural networks or mask-RCNN, but given that training set is small, it is not clear that a deep learning model with thousands of parameters is the most efficient or accurate way to approach the problem. Here we approach this as a clustering problem, using Density-Based Spatial Clustering of Applications with Noise.
 
 In short DBSCAN uses uses a distance measure between points, to define a neighbour as lying within less than a distance ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon). A core point is one with more than minPts neighbours, where  ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon) and minPts are parameters. Plotting a graph of connections between neighbours, we get a clustering rule i.e. all core points that are linked to each other through a path of core points belong to the same cluster. Points which don't belong to any cluster are noise points.
 
@@ -15,7 +15,7 @@ A few sample images:
 
 # Image pre-processing
 
-The preprocessing involves several steps - first identify the colour of the background, this is most likely the the pixel value  that is most frequent (i.e. the statistical mode) for each of the channels R,G and B, and then subtract this value from the data array in that channel:
+The preprocessing involves several steps - first identify the colour of the background, this is most likely the pixel value  that is most frequent (i.e. the statistical mode) for each of the channels R,G and B, and then subtract this value from the data array in that channel:
 
 ![equation](http://latex.codecogs.com/gif.latex?RGB_%7Bij%7D%20%5Crightarrow%20%28R%20-%20R_%7Bmode%7D%29%28G%20-%20G_%7Bmode%7D%29%28B%20-%20B_%7Bmode%7D%29_%7Bij%7D)
 
