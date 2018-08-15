@@ -34,7 +34,7 @@ The key in any clustering algorithm is to find a meaningful and useful distance 
 
 We also can consider a distance as low if there is a path connecting the two  points that  doesn't pass through the background:
 
-![equation](http://latex.codecogs.com/gif.latex?distance%5C_B_%7B%28ij%29%20%5Cleftrightarrow%20%28kl%29%7D%20%5Cinf_%7B_%7Bp%5Cepsilon%28ij%29%5Cleftrightarrow%28kl%29%7D%7D%20%5CBig%5C%7B%20%5Cfrac%7B1%7D%7B%5Cdelta%20&plus;%20%5Cmin%28%7C%7CRGB%7C%7C%29_p%7D%20%5CBig%5C%7D)
+![equation](http://latex.codecogs.com/gif.latex?distance%5C_B_%7B%28ij%29%20%5Cleftrightarrow%20%28kl%29%7D%20%3D%20%5Cinf_%7B_%7Bp%5Cepsilon%28ij%29%5Cleftrightarrow%28kl%29%7D%7D%20%5CBig%5C%7B%20%5Cfrac%7B1%7D%7B%5Cdelta%20&plus;%20%5Cmin%28%7C%7CRGB%7C%7C%29_p%7D%20%5CBig%5C%7D)
 
 A small value ![equation](http://latex.codecogs.com/gif.latex?%5Cdelta) is there to prevent singularities. In practice a value of ![equation](http://latex.codecogs.com/gif.latex?%5Cdelta%3D0.1) seems to work well. 
 
